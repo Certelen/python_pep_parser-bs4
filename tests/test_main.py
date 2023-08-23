@@ -32,7 +32,8 @@ def test_main_file():
 
 def test_whats_new(mock_session):
     got = main.whats_new(mock_session)
-    header = ('Ссылка на статью', 'Заголовок', 'Редактор, Автор')
+    header = ('Ссылка на статью',
+              'Заголовок', 'Редактор, Автор')
     assert isinstance(got, list), (
         'Функция `whats_new` должна возвращать объект типа `list`'
     )
@@ -61,9 +62,11 @@ def test_latest_versions(mock_session):
         'Функция `latest_versions` должна вернуть список `result`, '
         'элементами которого должны быть объекты типа `tuple`'
     )
-    header = ('Ссылка на документацию', 'Версия', 'Статус')
+    header = ('Ссылка на документацию',
+              'Версия', 'Статус')
     answer = [
-        ('Ссылка на документацию', 'Версия', 'Статус'),
+        ('Ссылка на документацию',
+         'Версия', 'Статус'),
         ('https://docs.python.org/3.12/', '3.12', 'in development'),
         ('https://docs.python.org/3.11/', '3.11', 'pre-release'),
         ('https://docs.python.org/3.10/', '3.10', 'stable'),
